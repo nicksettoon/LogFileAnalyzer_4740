@@ -3,14 +3,20 @@ Programming Assignment #1 for Big Data Technologies 4740
 
 hadoop must be installed and configured and access_log.gz must be in same directory as the Makefile and command.sh script.
 
-print the make targets for this project
+1. extract LogFileAnalyzer.zip file
+2. enter the unziped directory
+3. run the desired make target
+
+MAKE TARGETS: 
+
+print the make targets for this project:
 
 $ make
 
-runs the job
+run the MapReduce job:
 
 $ make lastrequest
 
-prints the last run's results
+print the last job's results:
 
 $ make results
