@@ -1,8 +1,11 @@
 # LogFileAnalyzer_4740
 Programming Assignment #1 for Big Data Technologies 4740
 
-$ make to print the make targets for this project
+print the make targets for this project
+$ make
 
-$ make lastrequest to run the job
+runs the job
+$ make lastrequest
 
-$ make results to print last run's results
+prints the last run's results
+$ make results
