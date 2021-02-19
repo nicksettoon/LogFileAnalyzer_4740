@@ -39,7 +39,7 @@ public class LogMapper extends Mapper<LongWritable, Text, Text, Text>{
 		/* regex for pulling out date and time info
 		* 2 digits followed by a /, all the way to a : followed by 2 final digits
 		*/
-		String datetimeRegex = "\\d{2}/.*:\\d{2}\\s";
+		String datetimeRegex = "\\d{2}/.*:\\d{2}\\s-";
 		Pattern datetimePattern = Pattern.compile(datetimeRegex); // feed pattern object the regex
 		Matcher datetimeMatcher = datetimePattern.matcher(logLine); // feed matcher the search string
 
@@ -53,7 +53,7 @@ public class LogMapper extends Mapper<LongWritable, Text, Text, Text>{
 		if (datetimeMatcher.find()) {
 			datetime = datetimeMatcher.group();
 			// re-process datetime to remove space at the end of the group
-			datetimeRegex = "\\s";
+			datetimeRegex = "\\s-";
 			datetimePattern = Pattern.compile(datetimeRegex);
 			datetimeMatcher = datetimePattern.matcher(datetime);
 			datetimeMatcher.replaceAll(""); //replace space with ""
